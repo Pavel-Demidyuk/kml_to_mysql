@@ -209,7 +209,7 @@ class Kml_To_Mysql
 		
 		$query .= "';\n";
 
-		return array ($query , 'INSERT INTO regions (`name`, `polygons`) VALUES (' . $polygon["name"] . ', GeomFromText(@g))');
+		return array ($query , 'INSERT INTO ' . self::DB_TABLE_NAME . ' (`name`, `polygons`) VALUES (' . $polygon["name"] . ', GeomFromText(@g))');
 	}
 	
 	/**
